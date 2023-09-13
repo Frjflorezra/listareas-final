@@ -3,6 +3,8 @@ import "./BoardContent.scss";
 import Column from "../Column/Column";
 import { initData } from "../../actions/initData";
 import _, { isEmpty } from "lodash";
+import { mapOrder } from "../../utilities/sorts";
+
 const BoardContent = () => {
   const [board, setBoard] = useState({});
   const [columns, setColumns] = useState([]);
@@ -13,12 +15,7 @@ const BoardContent = () => {
       setBoard(boardInitData);
 
       //sort columns
-      boardInitData.columns.sort(
-        (a, b) =>
-          boardInitData.columnOrder.indexOf(a.id) -
-          boardInitData.columnOrder.indexOf(b.id)
-      );
-      setColumns(boardInitData.columns);
+      setColumns(mapOrder(boardInitData.columns, boardInitData.columnOrder, 'id'));
     }
   }, []);
 
@@ -33,6 +30,7 @@ const BoardContent = () => {
   return (
     <>
       <div className="board-columns">
+        
         {columns &&
           columns.length > 0 &&
           columns.map((column, index) => {

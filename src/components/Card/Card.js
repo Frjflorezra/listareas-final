@@ -1,10 +1,15 @@
 import React from "react";
 import "./Card.scss";
-const Card = () => {
+const Card = (props) => {
+  const {card} = props
   return (
     <>
       <li className="card-item">
-        <img src="https://raw.githubusercontent.com/haryphamdev/sharing-host-files/master/trello/img-design.png"></img>
+        {card.image &&
+          <img className="card-cover" src={card.image}/>
+          
+        }
+        {card.title}
         Desing & Reaserch
       </li>
     </>

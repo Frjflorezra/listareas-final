@@ -2,13 +2,13 @@ export const initData = {
   boards: [
     {
       id: "board-1",
-      columnOrder: ["column-2", "column-3", "column-1"],
+      columnOrder: ["column-2", "column-1", "column-3"],
       columns: [
         {
           id: "column-1",
           boardId: "board-1",
           title: "Todo 1",
-          cardOrder: ["card-1", "card-2", "card-3", "card-4", "card-5", "card-6", "card-7"],
+          cardOrder: ["card-3", "card-2", "card-1", "card-4", "card-5", "card-6", "card-7"],
           cards: [
             {
               id: "card-1",
