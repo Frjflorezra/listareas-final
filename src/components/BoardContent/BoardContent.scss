@@ -5,7 +5,17 @@
   margin: 0 $gap $gap;
   gap: 10px;
   overflow-x: auto;
-
+  .btn {
+    
+    flex: 0 0 auto;
+    width: 100px;
+    height: 70px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #9fd3c7;
+    border-radius: $card-border-radius;
+  }
   & ::-webkit-scrollbar {
     -webkit-appearance: none;
   }

@@ -1,6 +1,8 @@
 import "./Column.scss";
 import Card from "../Card/Card";
 import { mapOrder } from "../../utilities/sorts";
+import {useState} from 'react';
+
 const Column = (props) => {
   const { column } = props;
   const cards = mapOrder(column.cards, column.cardOrder, 'id');
@@ -18,8 +20,7 @@ const Column = (props) => {
               <Card key={card.id} card={card} />
               );
             })}
-        </ul>
-        <footer>Add another card</footer>
+        </ul>        
       </div>
     </>
   );

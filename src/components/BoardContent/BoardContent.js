@@ -4,10 +4,19 @@ import Column from "../Column/Column";
 import { initData } from "../../actions/initData";
 import _, { isEmpty } from "lodash";
 import { mapOrder } from "../../utilities/sorts";
-
+import CustomModal from "../Form/Modal";
 const BoardContent = () => {
   const [board, setBoard] = useState({});
   const [columns, setColumns] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   useEffect(() => {
     const boardInitData = initData.boards.find((item) => item.id === "board-1");
@@ -30,12 +39,13 @@ const BoardContent = () => {
   return (
     <>
       <div className="board-columns">
-        
-        {columns &&
+          {columns &&
           columns.length > 0 &&
           columns.map((column, index) => {
             return <Column key={column.id} column={column} />;
           })}
+          <button className="btn" onClick={openModal}>Add task</button>
+          <CustomModal isOpen={modalIsOpen} closeModal={closeModal} />
       </div>
     </>
   );

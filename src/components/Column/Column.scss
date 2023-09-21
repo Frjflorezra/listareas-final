@@ -1,52 +1,55 @@
-@import '../../settings';
+@import "../../settings";
 
 .column {
-    flex: 0 0 auto;
-    width: 300px;
-    height: calc(100% - #{$gap});
-    // margin-left: 10px;
+  margin-top: 10px;
+  
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 300px;
+  height: calc(100% - #{$gap});
 
-    > * {
-      background-color: $list-bg-color;
-      color: #333;
-      padding: 0 8px;
-    }
-    header {
-      padding-left: 15px;
-      height: $column-header-height;
-      line-height: $column-header-height;
-      font-size: 16px;
-      font-weight: bold;
-      border-top-left-radius: $column-border-radius;
-      border-top-right-radius: $column-border-radius;
-    }
-    footer {
-      padding-left: 10px;
-      height: $column-footer-height;
-      line-height: $column-footer-height;
-      border-bottom-left-radius: $column-border-radius;
-      border-bottom-right-radius: $column-border-radius;
-    }
-    ul.card-list {
-      list-style-type: none;
-      margin: 0;
-      max-height: calc(
-        100% - #{$column-header-height} - #{$column-footer-height}
-      );
-      overflow-y: auto;
+  // margin-left: 10px;
 
-      & ::-webkit-scrollbar {
-        -webkit-appearance: none;
-      }
+  > * {
+    background-color: #142d4c;
 
-      & ::-webkit-scrollbar:horizontal {
-        width: 16px;
-      }
-      & ::-webkit-scrollbar-thumb {
-        background-color: darken($color: $list-bg-color, $amount: 15);
-        border: 4px solid transparent;
-        border-radius: 8px;
-        background-clip: padding-box;
-      }
+    padding: 0 8px;
+  }
+  header {
+    padding-left: 15px;
+    color: #9fd3c7;
+    height: $column-header-height;
+    line-height: $column-header-height;
+    font-size: 16px;
+    font-weight: bold;
+    border-top-left-radius: $column-border-radius;
+    border-top-right-radius: $column-border-radius;
+  }
+  ul.card-list {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom-left-radius: $column-border-radius;
+    border-bottom-right-radius: $column-border-radius;
+    max-height: calc(
+      100% - #{$column-header-height} - #{$column-footer-height}
+    );
+    overflow-y: auto;
+
+    & ::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    & ::-webkit-scrollbar:horizontal {
+      width: 16px;
+    }
+    & ::-webkit-scrollbar-thumb {
+      background-color: darken($color: $list-bg-color, $amount: 15);
+      border: 4px solid transparent;
+      border-radius: 8px;
+      background-clip: padding-box;
     }
   }
+
+}
